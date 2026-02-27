@@ -76,3 +76,17 @@ const calculator: Calculator = {
 function identity<T>(arg: T): T {
     return arg; // this function simply returns the argument it receives, and the type of the argument is determined by the caller
 }
+
+// example of a function that uses type guards to narrow down types
+function isString(value: any): value is string {
+    return typeof value === 'string'; // this function checks if the value is a string and narrows the type accordingly
+}
+
+// example of uncknown type and type assertion
+function processValue(value: unknown): void {
+    if (isString(value)) {
+        console.log(`The string is: ${value}`); // if the value is a string, we can safely use it as such
+    } else {
+        console.log('The value is not a string'); // if it's not a string, we handle it accordingly
+    }
+}
