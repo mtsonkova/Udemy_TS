@@ -1,5 +1,5 @@
 // enums example
-export enum Colors {
+enum Colors {
   Red = 'red',
   Green = 'green',
   Blue = 'blue',
